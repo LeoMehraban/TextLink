@@ -1,0 +1,17 @@
+{
+  "name": "textlink",
+  "version": "1.0.0",
+  "description": "A Text Web Protocal",
+  "main": "index.js",
+  "bin": {
+    "textlink": "textlink"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
