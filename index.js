@@ -24,6 +24,7 @@ function getURL(){
             }else if(commandargs[0] == 'code'){
                 pageloaded = true
                 links = []
+                counter = 0
                 console.log('Running Dev Code....\n')
                 console.log(parse(testCode))
                 getURL()
@@ -36,6 +37,7 @@ function getURL(){
                 `)
                 getURL()
             } else if(commandargs[0] == 'go'){
+                counter = 0
                 pageloaded = true
                 const res = await fetch(commandargs[1]);
                 const txt = await res.text();
@@ -43,6 +45,7 @@ function getURL(){
                 links = []
                 getURL();
             } else if(commandargs[0] == 'link'){
+                counter = 0
                 const res = await fetch(links[commandargs[1]].url);
                 const txt = await res.text();
                 console.log(parse(txt));
