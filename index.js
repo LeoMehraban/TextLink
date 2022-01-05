@@ -1,4 +1,4 @@
-//TextLink 0.1 © 2020-2021 Dogware Inc.
+//TextLink 0.1 © 2020-2022 Dogware Inc.
 const fetch = require('node-fetch');
 const readline = require('readline').createInterface({
     input: process.stdin,
@@ -13,6 +13,7 @@ let testCode = `Dogs Are Cute
 `
 let pageloaded = false
 let links = []
+//let linksNew = []
 
 function getURL(){
     try{
@@ -23,6 +24,7 @@ function getURL(){
                 readline.close();
             }else if(commandargs[0] == 'code'){
                 pageloaded = true
+                linksNew = links
                 links = []
                 counter = 0
                 console.log('Running Dev Code....\n')
@@ -39,17 +41,18 @@ function getURL(){
             } else if(commandargs[0] == 'go'){
                 counter = 0
                 pageloaded = true
+                links = []
                 const res = await fetch(commandargs[1]);
                 const txt = await res.text();
                 console.log(parse(txt));
-                links = []
                 getURL();
             } else if(commandargs[0] == 'link'){
                 counter = 0
+                //console.log(linksNew[commandargs[1]])
                 const res = await fetch(links[commandargs[1]].url);
                 const txt = await res.text();
-                console.log(parse(txt));
                 links = []
+                console.log(parse(txt));
                 getURL();
             } else {
                 console.log('unrecognized command\n')
