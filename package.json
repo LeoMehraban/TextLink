@@ -1,6 +1,6 @@
 {
   "name": "textlink",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "description": "A Text Web Protocal",
   "main": "index.js",
   "bin": {
@@ -9,9 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Leo Mehraban",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "colors": "^1.4.0",
+    "node-fetch": "^2.6.1",
+    "prompt-sync": "^4.2.0"
   }
 }
+
